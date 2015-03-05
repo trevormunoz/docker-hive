@@ -1,0 +1,20 @@
+es:
+    build: ./es
+    expose:
+     - "9200"
+     - "9300"
+    volumes_from:
+     - esdata
+esdata:
+    image: ubuntu:14.04
+    volumes:
+     - /var/data/elasticsearch
+     - logs/:/var/log/elasticsearch
+    command: true
+hive:
+    build: ./hive
+    entrypoint: /usr/local/bin/start.sh
+    ports:
+     - "8888:8888"
+    links:
+     - es
