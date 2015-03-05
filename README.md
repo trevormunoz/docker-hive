@@ -9,3 +9,5 @@ A docker setup to run NYTimes Labs [Hive](https://github.com/nytlabs/hive) frame
 5. Clone this repo and change into the directory
 6. Run fig up `sudo docker-compose up -d`
 7. Check that processes are running `sudo docker-compose ps`
+
+If you point your browser at port 8888 of wherever you have the container running, you should see the hive heartbeat message.
